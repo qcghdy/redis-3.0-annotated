@@ -44,7 +44,7 @@
 /*
  * 文件事件状态
  */
-// 未设置
+// 未设置,初始化时设置
 #define AE_NONE 0
 // 可读
 #define AE_READABLE 1
