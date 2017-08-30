@@ -39,7 +39,8 @@ typedef struct aeApiState {
     // epoll_event 实例描述符
     int epfd;
 
-    // 事件槽
+    // 事件槽。在调用epoll_wait来等待时间时，如果epfd有事件发生时，则通过events这个buffer来接收内核返回的事件列表,即接收epoll_wait的第二个参数events的取值
+    // int epoll_wait(int epfd, struct epoll_event * events, int maxevents, int timeout);
     struct epoll_event *events;
 
 } aeApiState;
