@@ -102,7 +102,8 @@ typedef struct aeFileEvent {
     // 写事件处理器
     aeFileProc *wfileProc;
 
-    // 多路复用库的私有数据
+    // 多路复用库的私有数据，主要用于接收 读、写处理函数 rfileProc、wfileProcd的入参。请参考aeFileProc函数指针的声明
+    // typedef void aeFileProc(struct aeEventLoop *eventLoop, int fd, void *clientData, int mask);
     void *clientData;
 
 } aeFileEvent;
